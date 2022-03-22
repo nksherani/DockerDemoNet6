@@ -16,8 +16,8 @@ COPY src/*/*.csproj ./
 RUN for file in $(ls *.csproj); do mkdir -p src/${file%.*}/ && echo $file &&  mv $file src/${file%.*}/; done
 
 # Copy the test project files
-#COPY tests/*/*.csproj ./
-#RUN for file in $(ls *.csproj); do mkdir -p tests/${file%.*}/ && mv $file tests/${file%.*}/; done
+COPY tests/*/*.csproj ./
+RUN for file in $(ls *.csproj); do mkdir -p tests/${file%.*}/ && mv $file tests/${file%.*}/; done
 
 RUN echo $(ls -1) 
 
@@ -26,11 +26,11 @@ COPY . .
 RUN dotnet build -c Release
 
 # testrunner
-#
-#FROM build AS testrunner
-#WORKDIR /app/tests/CNH.Products.NovatelActivation.UnitTests
-#ENTRYPOINT dotnet test --results-directory /app/artifacts --logger:trx
-#
+
+FROM build AS testrunner
+WORKDIR /app/tests/DockerDemoNet6.Tests
+ENTRYPOINT dotnet test --results-directory /app/artifacts --logger:trx
+
 
 # api-publish
 FROM build AS api-publish
@@ -40,9 +40,6 @@ RUN dotnet publish -c Release -o out
 # api image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS api
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 443
-EXPOSE 80
 ENV ASPNETCORE_ENVIRONMENT $ENVIRONMENT
 COPY --from=api-publish app/src/DockerDemoNet6/out ./
 ENTRYPOINT [ "dotnet", "DockerDemoNet6.dll" ]

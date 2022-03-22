@@ -5,8 +5,7 @@ cd "C:\Users\alphasoft\source\repos\DockerDemoNet6"
 # build docker image, we are not specifying dockerfile here because it is present in the same folder
 # dot at the end is referring to current folder and can be replaced by the path of solution folder
 # 1.2 is the tag which may have values like latest, dev, 1.0.0 etc
-docker build --force-rm -t dockerdemonet6:1.2 .
+docker build --force-rm -t dockerdemonet6:1.3 .
 
 # port 443 is not working it needs certificate configuration
-# if we only map 443 and do not use 80, it may terminate the container after running it immediately.
-docker run -p 44315:443 -p 8080:80 --name DockerDemoNet6Container dockerdemonet6:1.2
+docker run -p 44315:443 -p 8080:80 --name DockerDemoNet6Container dockerdemonet6:1.3

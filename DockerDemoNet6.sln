@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A6ED8F0C-BE5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerDemoNet6", "src\DockerDemoNet6\DockerDemoNet6.csproj", "{D1C5762E-0C3E-4218-ABA9-FDA4AFDBC0FA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{89A980A8-6EFE-46F8-90AF-A186E187438E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerDemoNet6.Tests", "tests\DockerDemoNet6.Tests\DockerDemoNet6.Tests.csproj", "{6A95DFC2-6A0D-4473-8382-703F57B0387F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,17 @@ Global
 		{D1C5762E-0C3E-4218-ABA9-FDA4AFDBC0FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1C5762E-0C3E-4218-ABA9-FDA4AFDBC0FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1C5762E-0C3E-4218-ABA9-FDA4AFDBC0FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A95DFC2-6A0D-4473-8382-703F57B0387F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A95DFC2-6A0D-4473-8382-703F57B0387F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A95DFC2-6A0D-4473-8382-703F57B0387F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A95DFC2-6A0D-4473-8382-703F57B0387F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D1C5762E-0C3E-4218-ABA9-FDA4AFDBC0FA} = {A6ED8F0C-BE57-48A8-8060-26C8E0A201B2}
+		{6A95DFC2-6A0D-4473-8382-703F57B0387F} = {89A980A8-6EFE-46F8-90AF-A186E187438E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D269787A-CFD8-4023-AE23-DE752A95E5EF}
